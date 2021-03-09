@@ -8,8 +8,6 @@ fetch('http://localhost:4000/api/courses/')
         return res.json()
     })
     .then(data => {
-        console.log(data)
-        // <li>name</li>
         let courseContainer = document.querySelector('#courseContainer');
         let courseData = data.map(elem => {
             return `
@@ -25,7 +23,7 @@ fetch('http://localhost:4000/api/courses/')
 	        `
         })
 
-        console.log(courseData.join(""))
+        // console.log(courseData.join(""))
 
         courseContainer.innerHTML = courseData.join("");
     })
