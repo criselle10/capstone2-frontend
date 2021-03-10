@@ -37,3 +37,40 @@ createCourse.addEventListener('submit', (e) => {
 
         })
 })
+
+
+// SIR ALEX SOLUTION
+
+// let createCourse = document.querySelector('#createCourse')
+// createCourse.addEventListener('submit' , e => {
+// 	e.preventDefault()
+
+// 	let name = document.querySelector('#name').value;
+// 	let price = document.querySelector('#price').value;
+// 	let description = document.querySelector('#description').value;
+
+// 	let url = "http://localhost:4000/api/courses/";
+// 	let options = {
+// 		method : "POST",
+// 		body: JSON.stringify({
+// 			name,
+// 			price,
+// 			description
+// 		}),
+// 		headers: {
+// 			"Content-Type" : "application/json",
+// 			"Authorization" : `Bearer ${localStorage["token"]}`
+// 		}
+// 	}
+
+// 	fetch(url, options)
+// 	.then( res => {
+// 		// console.log(res.json())
+// 		return res.json()
+// 	})
+// 	.then( data => {
+// 		if (!data) return alert("Something went wrong")
+
+// 		window.location.replace('./courses.html');
+// 	})
+// })
