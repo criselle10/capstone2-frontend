@@ -46,10 +46,10 @@ registerForm.addEventListener('submit', (e) => {
         .then(data => {
             console.log(data)
             if (data) {
-                alert("Registration successful");
-                window.location.replace("./login.html")
-            } else {
-                alert("Something went wrong");
-            }
+    alert("Registration successful");
+    window.location.replace("./login.html")
+} else {
+    alert("Something went wrong");
+}
         })
 })
