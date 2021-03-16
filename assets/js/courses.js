@@ -30,11 +30,11 @@ fetch('http://localhost:4000/api/courses/')
             } else {
                 cardFooter = `
                 <a 
-                    href="./editCourse.html?courseId=_courseId_" class="btn btn-primary editButton">
+                    href="./editCourse.html?courseId=${courseId}" class="btn btn-primary editButton">
                     Edit
                 </a>
                 <a 
-                    href="./deleteCourse.html?courseId=_courseId_" class="btn btn-danger deleteButton">
+                    href="./deleteCourse.html?courseId=${courseId}" class="btn btn-danger deleteButton">
                     Delete
                 </a>
             `
