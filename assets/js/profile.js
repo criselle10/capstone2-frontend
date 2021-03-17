@@ -16,32 +16,34 @@ if (!token || token === null) {
         .then(data => {
             // console.log(data)
             let enrolledCourses = data.enrollments
-            console.table(enrolledCourses)
+            // console.table(enrolledCourses)
             let message = ""; //we will add message if the enrolles courses is empty, else it will stay empty
 
             if (enrolledCourses.length === 0) {
                 message = "No enrolled courses yet."
             } else {
+
                 let listOfCourses = enrolledCourses.map(course => {
                     let d = new Date(course.enrolledOn)
-                    // console.log(d)
+                    let cName;
                     const returnData = () => {
                         fetch(`https://ca-coursebooking.herokuapp.com/api/courses/${course.courseId}`)
                             .then(res => res.json())
                             .then(data => {
+                                // console.log(data)
                                 cName = data.name
-                            })
+                            });
                     }
                     return `
                         <tr>
-                            <td>${course.cName}</td>
+                            <td>${cName}</td>
                             <td>${d}</td>
                             <td>${course.status}</td>
                         </tr>
                     `
                 })
 
-                console.log(listOfCourses)
+                // console.log(listOfCourses)
                 message = listOfCourses.join("")
             }
 
