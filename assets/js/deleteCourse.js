@@ -3,7 +3,7 @@ let params = new URLSearchParams(window.location.search)
 let courseId = params.get('courseId');
 let token = localStorage.getItem('token');
 
-fetch(`http://localhost:4000/api/courses/${courseId}`, {
+fetch(`https://ca-coursebooking.herokuapp.com/api/courses/${courseId}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`

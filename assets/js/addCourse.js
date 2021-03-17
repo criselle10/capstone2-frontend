@@ -18,7 +18,7 @@ createCourse.addEventListener('submit', (e) => {
         description: description
     }
 
-    fetch('http://localhost:4000/api/courses/', {
+    fetch('https://ca-coursebooking.herokuapp.com/api/courses/', {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

@@ -60,5 +60,13 @@ fetch('https://ca-coursebooking.herokuapp.com/api/courses')
             `
         })
 
+        // let userProfile = document.querySelector('#userProfile');
+ // let userName = data.map(elem => {
+ //     return `
+ //         <li class="nav-item">
+ //             <a href="./profile.html" class="nav-link" id="userProfile">${data.firstName.lastName}</a>
+ //         </li>
+ //     `
+ // })
         courseContainer.innerHTML = courseData.join("");
     })

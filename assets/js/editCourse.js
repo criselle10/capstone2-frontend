@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const courseId = urlParams.get('courseId');
 
 console.log(courseId)
-let url = `http://localhost:4000/api/courses/${courseId}`;
+let url = `https://ca-coursebooking.herokuapp.com/api/courses/${courseId}`;
 
 fetch(url)
     .then(res => res.json())
@@ -34,7 +34,7 @@ editCourse.addEventListener('submit', (e) => {
         description: description
     }
 
-    fetch('http://localhost:4000/api/courses', {
+    fetch('https://ca-coursebooking.herokuapp.com/api/courses', {
             method: "PUT",
             body: JSON.stringify(body),
             headers: {

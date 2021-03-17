@@ -5,7 +5,7 @@ if (!token || token === null) {
     alert('You must login first!')
     window.location.href = "./login.html"
 } else {
-    fetch('http://localhost:4000/api/users/details', {
+    fetch('https://ca-coursebooking.herokuapp.com/api/users/details', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ if (!token || token === null) {
         .then(data => {
             // console.log(data)
             let enrolledCourses = data.enrollments
-            console.log(enrolledCourses)
+            console.table(enrolledCourses)
             let message = ""; //we will add message if the enrolles courses is empty, else it will stay empty
 
             if (enrolledCourses.length === 0) {
@@ -24,14 +24,21 @@ if (!token || token === null) {
             } else {
                 let listOfCourses = enrolledCourses.map(course => {
                     let d = new Date(course.enrolledOn)
-                    console.log(d)
+                    // console.log(d)
+                    const returnData = () => {
+                        fetch(`https://ca-coursebooking.herokuapp.com/api/courses/${course.courseId}`)
+                            .then(res => res.json())
+                            .then(data => {
+                                cName = data.name
+                            })
+                    }
                     return `
-            			<tr>
-		                    <td>${course._id}</td>
-		                    <td>${d}</td>
-		                    <td>${course.status}</td>
-	               		</tr>
-            		`
+                        <tr>
+                            <td>${course.cName}</td>
+                            <td>${d}</td>
+                            <td>${course.status}</td>
+                        </tr>
+                    `
                 })
 
                 console.log(listOfCourses)
@@ -39,29 +46,29 @@ if (!token || token === null) {
             }
 
             const profileDetails = `
-	            <div class="col-12">
-	                <section class="my-5">
-	                    <div class="text-center">
-	                        <h3>First Name: ${data.firstName}</h3>
-	                        <h3>Last Name: ${data.lastName}</h3>
-	                        <h3>Email: ${data.email}</h3>
-	                        <h3 class="ct-3">Class History</h3>
-	                    </div>
-	                    <table class="table table-hover">
-	                        <thead>
-	                            <tr>
-	                                <th> Course ID </th>
-	                                <th> Enrolled On </th>
-	                                <th> Status </th>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-	                            ${message}
-	                        </tbody>
-	                    </table>
-	                </section>
-	            </div>
-	            `
+                <div class="col-12">
+                    <section class="my-5">
+                        <div class="text-center">
+                            <h3>First Name: ${data.firstName}</h3>
+                            <h3>Last Name: ${data.lastName}</h3>
+                            <h3>Email: ${data.email}</h3>
+                            <h3 class="ct-3">Class History</h3>
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th> Course Name </th>
+                                    <th> Enrolled On </th>
+                                    <th> Status </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${message}
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                `
             // console.log(profileDetails)
             profileContainer.innerHTML = profileDetails;
         })
