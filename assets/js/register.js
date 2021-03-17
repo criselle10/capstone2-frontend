@@ -35,7 +35,7 @@ registerForm.addEventListener('submit', (e) => {
         confirmPassword: confirmPassword
     }
 
-    fetch('http://localhost:4000/api/users/', {
+    fetch('https://ca-coursebooking.herokuapp.com/api/users/', {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -46,10 +46,10 @@ registerForm.addEventListener('submit', (e) => {
         .then(data => {
             console.log(data)
             if (data) {
-    alert("Registration successful");
-    window.location.replace("./login.html")
-} else {
-    alert("Something went wrong");
-}
+                alert("Registration successful");
+                window.location.replace("./login.html")
+            } else {
+                alert("Something went wrong");
+            }
         })
 })

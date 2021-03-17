@@ -48,7 +48,7 @@ logInUser.addEventListener('submit', (e) => {
         password: password
     }
 
-    fetch('http://localhost:4000/api/users/login', {
+    fetch('https://ca-coursebooking.herokuapp.com/api/users/login', {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -60,7 +60,7 @@ logInUser.addEventListener('submit', (e) => {
 
             localStorage.setItem("token", data.accessToken)
 
-            fetch('http://localhost:4000/api/users/details', {
+            fetch('https://ca-coursebooking.herokuapp.com/api/users/details', {
                     headers: {
                         "Authorization": `Bearer ${localStorage["token"]}`
                     }

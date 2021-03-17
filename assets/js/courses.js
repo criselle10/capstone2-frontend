@@ -17,7 +17,7 @@ if (adminUser == "false" || !adminUser) {
 // .then(data)
 // .catch()
 
-fetch('http://localhost:4000/api/courses/')
+fetch('https://ca-coursebooking.herokuapp.com/api/courses')
     .then(res => {
         return res.json()
     })
