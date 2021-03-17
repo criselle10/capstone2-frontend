@@ -16,13 +16,26 @@ if (!token || token === null) {
         .then(data => {
             // console.log(data)
             let enrolledCourses = data.enrollments
-            // console.log(enrolledCourses.length === 0)
+            console.log(enrolledCourses)
             let message = ""; //we will add message if the enrolles courses is empty, else it will stay empty
 
             if (enrolledCourses.length === 0) {
                 message = "No enrolled courses yet."
             } else {
-                message = "";
+                let listOfCourses = enrolledCourses.map(course => {
+                    let d = new Date(course.enrolledOn)
+                    console.log(d)
+                    return `
+            			<tr>
+		                    <td>${course._id}</td>
+		                    <td>${d}</td>
+		                    <td>${course.status}</td>
+	               		</tr>
+            		`
+                })
+
+                console.log(listOfCourses)
+                message = listOfCourses.join("")
             }
 
             const profileDetails = `
@@ -43,11 +56,7 @@ if (!token || token === null) {
 	                            </tr>
 	                        </thead>
 	                        <tbody>
-	                            <!-- tr sample start -->
-	                            <tr>
-	                                <td>${message}</td>
-	                            </tr>
-	                            <!-- tr sample end -->
+	                            ${message}
 	                        </tbody>
 	                    </table>
 	                </section>
