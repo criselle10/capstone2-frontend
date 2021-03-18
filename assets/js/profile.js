@@ -1,10 +1,14 @@
 let token = localStorage.getItem("token");
 let profileContainer = document.querySelector('#profileContainer');
+const spinner = document.querySelector('#spinner');
+const userContainer = document.querySelector('#userContainer ');
+const userEnrolledCourses = document.querySelector('#userEnrolledCourses');
 
 if (!token || token === null) {
     alert('You must login first!')
     window.location.href = "./login.html"
 } else {
+    
     fetch('https://ca-coursebooking.herokuapp.com/api/users/details', {
             method: 'GET',
             headers: {
@@ -14,64 +18,29 @@ if (!token || token === null) {
         })
         .then(res => res.json())
         .then(data => {
-            // console.log(data)
-            let enrolledCourses = data.enrollments
-            // console.table(enrolledCourses)
-            let message = ""; //we will add message if the enrolles courses is empty, else it will stay empty
+            userContainer.innerHTML = `
+                <h3>First Name: ${data.firstName}</h3>
+                <h3>Last Name: ${data.lastName}</h3>
+                <h3>Email: ${data.email}</h3>
+                <h3 class="ct-3">Class History</h3>
+            `
 
-            if (enrolledCourses.length === 0) {
-                message = "No enrolled courses yet."
-            } else {
+            data.enrollments.forEach(course => {
+                fetch(`https://ca-coursebooking.herokuapp.com/api/courses/${course.courseId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        let d = new Date(course.enrolledOn);
 
-                let listOfCourses = enrolledCourses.map(course => {
-                    let d = new Date(course.enrolledOn)
-                    let cName;
-                    const returnData = () => {
-                        fetch(`https://ca-coursebooking.herokuapp.com/api/courses/${course.courseId}`)
-                            .then(res => res.json())
-                            .then(data => {
-                                // console.log(data)
-                                cName = data.name
-                            });
-                    }
-                    return `
-                        <tr>
-                            <td>${cName}</td>
-                            <td>${d}</td>
-                            <td>${course.status}</td>
-                        </tr>
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                        <td>${data.name}</td>
+                        <td>${d}</td>
+                        <td>${course.status}</td>
                     `
-                })
-
-                // console.log(listOfCourses)
-                message = listOfCourses.join("")
-            }
-
-            const profileDetails = `
-                <div class="col-12">
-                    <section class="my-5">
-                        <div class="text-center">
-                            <h3>First Name: ${data.firstName}</h3>
-                            <h3>Last Name: ${data.lastName}</h3>
-                            <h3>Email: ${data.email}</h3>
-                            <h3 class="ct-3">Class History</h3>
-                        </div>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th> Course Name </th>
-                                    <th> Enrolled On </th>
-                                    <th> Status </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${message}
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-                `
-            // console.log(profileDetails)
-            profileContainer.innerHTML = profileDetails;
+                        userEnrolledCourses.appendChild(row);
+                    })
+            })
+            spinner.innerHTML = '';
         })
+        .catch(err => console.log(err));
 }
