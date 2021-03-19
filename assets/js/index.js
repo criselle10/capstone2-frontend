@@ -14,8 +14,11 @@ if (!token || token === null) {
 
 } else {
     buttonsQuery = `
+		<li class="nav-item">
+			<a href="./pages/profile.html" class="nav-link">Profile</a>
+		</li>
     	<li class="nav-item">
-	        <a href="./pages/logout.html" class="nav-link">Log out</a>
+	        <a href="./pages/logout.html" class="nav-link">Log Out</a>
 	    </li>
 	`
 }

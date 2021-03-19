@@ -1,7 +1,29 @@
 const urlParams = new URLSearchParams(window.location.search);
 const courseId = urlParams.get('courseId');
 let token = localStorage.getItem("token");
+let buttonForUser = document.querySelector('#buttonForUser');
+let navButton = '';
 
+if(!token || token == null){
+     navButton = `
+     <li>
+        <a href="./login.html" class="nav-link">Log In</a>
+    </li>
+    <li class="nav-item">
+        <a href="./register.html" class="nav-link">Register</a>
+    </li>
+    `
+}else{
+    navButton = `
+    <li class="nav-item">
+        <a href="./profile.html" class="nav-link">Profile</a>
+    </li>
+    <li>
+        <a href="./logout.html" class="nav-link">Log Out</a>
+    </li>
+    `
+}
+buttonForUser.innerHTML = navButton;
 
 let url = `https://ca-coursebooking.herokuapp.com/api/courses/${courseId}`;
 

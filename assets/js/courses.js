@@ -10,6 +10,9 @@ if (!token || token == null) {
         <li>
             <a href="./login.html" class="nav-link">Log In</a> 
         </li>
+        <li class="nav-item">
+            <a href="./register.html" class="nav-link">Register</a>
+        </li>
     `
     forLoggedInUserAdmin.innerHTML = loggedInButton
 } else {
