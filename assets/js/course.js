@@ -1,7 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 const courseId = urlParams.get('courseId');
+let token = localStorage.getItem("token");
 
-console.log(courseId)
+
 let url = `https://ca-coursebooking.herokuapp.com/api/courses/${courseId}`;
 
 fetch(url)
@@ -18,7 +19,11 @@ fetch(url)
 
 
         document.querySelector('#enrollButton').addEventListener('click', () => {
-            fetch(`https://ca-coursebooking.herokuapp.com/api/users/enroll`, {
+            if (!token || token === null) {
+                alert('You must login first!')
+                window.location.href = "./login.html"
+            }else{
+                fetch(`https://ca-coursebooking.herokuapp.com/api/users/enroll`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -30,7 +35,6 @@ fetch(url)
                 })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
                     if (data === true) {
                         // notify the user that enrollment is successful
                         alert("thank you for enrolling! see you!");
@@ -40,6 +44,6 @@ fetch(url)
                         //notify user that enrollment failed
                         alert("something went wrong");
                     }
-                })
+                })            }
         })
     })
