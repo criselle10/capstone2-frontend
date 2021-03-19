@@ -3,7 +3,6 @@ let adminButton = document.querySelector('#adminButton');
 let token = localStorage.getItem('token');
 let cardFooter;
 let url = '';
-
 let loggedInButton = '';
 let forLoggedInUserAdmin = document.querySelector('#forLoggedInUserAdmin');
 if (!token || token == null) {
