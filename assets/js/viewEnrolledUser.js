@@ -13,7 +13,7 @@ if (!token || token === null) {
     fetch(`https://ca-coursebooking.herokuapp.com/api/courses/${courseId}`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization' : `Bearer ${token}`
             }
         })
         .then(res => res.json())

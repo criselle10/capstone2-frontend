@@ -34,7 +34,7 @@ if (adminUser == "false" || !adminUser) {
     url = 'https://ca-coursebooking.herokuapp.com/api/courses/view'
     adminButton.innerHTML = `
     <div class="col-md-2">
-        <a href="./addCourse.html" class="btn btn-primary">Add Course</a>
+        <a href="./addCourse.html" class="btn">Add Course</a>
     </div>
 `
 }
@@ -68,11 +68,11 @@ fetch(url)
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <a 
-                            href="./editCourse.html?courseId=${courseId}" class="btn btn-warning editButton">
+                            href="./editCourse.html?courseId=${courseId}" class="btn">
                             Edit
                         </a>
                         <a 
-                            href="./viewEnrolledUser.html?courseId=${courseId}" class="btn btn-warning viewButton">
+                            href="./viewEnrolledUser.html?courseId=${courseId}" class="btn">
                             View
                         </a>
                     </div>

@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background: black;
+    color: #00adb5;
+}
+
+.btn {
+    border-color: #00adb5;
+    color: #00adb5;
+    font-weight: bold;
+}
+
+.btn:hover {
+    color: black;
+    background: #00adb5;
+}
+
+nav {
+    background: black ;
+    font-size: 18px;
+}
+
+.code {
+    height: 35px;
+    width: 35px;
+}
+
+.nav:hover {
+    color: #00adb5;
+}
+
+.navbar:hover {
+    color: white;
+
+}
+
+.bodyImage {
+    text-align: center;
+}
+
+header {
+    margin: 50px;
+}
+
+.header {
+    font-weight: bold;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+.frontEnd {
+    width: 60%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.signUpHere {
+    text-decoration: none;
+    color: #00adb5;
+}
+
+.signUpHere:hover {
+    color: white;
+}
+
+footer {
+    margin-top: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #252926;
+    color: black;
+    background: #00adb5;
+}
+
+#CA {
+    font-size: 15px;
+}
+
+#copyright {
+    font-size: 13px;
+}
