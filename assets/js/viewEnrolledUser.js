@@ -1,7 +1,7 @@
 let token = localStorage.getItem("token");
 let params = new URLSearchParams(window.location.search);
 let courseId = params.get('courseId');
-let courseName = document.querySelector('#courseName');
+let courseName = document.querySelector('#viewCourseName');
 let listOfEnrolledStudents = document.querySelector('#listOfEnrolledStudents');
 let enrolledStud = document.querySelector('#enrolledStud');
 
@@ -13,7 +13,7 @@ if (!token || token === null) {
     fetch(`https://ca-coursebooking.herokuapp.com/api/courses/${courseId}`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization' : `Bearer ${token}`
             }
         })
         .then(res => res.json())

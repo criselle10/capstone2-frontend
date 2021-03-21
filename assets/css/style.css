@@ -1,0 +1,220 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background: linear-gradient(white, #00adb5, white);
+    color: black;
+}
+
+nav {
+    background: black ;
+    font-size: 18px;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+header {
+    margin-top: 50px;
+}
+
+footer {
+    margin-top: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #252926;
+    color: whitesmoke;
+    background: black;
+}
+
+.form-check > label {
+    color: white;
+    width: 80px;
+    font-size: 1rem;
+}
+
+div > #overview {
+    font-size: 18px;
+}
+
+h4,
+#courseName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+section {
+    border: 2px solid whitesmoke;
+    padding: 20px;
+    box-shadow: 15px 15px rgb(136, 173, 175);
+    background: white;
+    border-radius: 20px;
+}
+
+
+.btn {
+    color: white;
+    font-weight: bold;
+    border: 1px solid #20639b;
+    border-radius: 12px;
+    background: #0d98ba;
+}
+
+.btn:hover {
+    color: black;
+}
+
+.code {
+    height: 35px;
+    width: 35px;
+}
+
+.nav:hover {
+    color: #00adb5;
+}
+
+.navbar:hover {
+    color: white;
+
+}
+
+.bodyImage {
+    text-align: center;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.frontEnd {
+    width: 60%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.signUpHere {
+    text-decoration: none;
+    color:black;
+}
+
+.signUpHere:hover {
+    color: grey;
+}
+
+.card {
+    border: 1px solid grey;
+}
+
+.card-footer {
+    background: #3a3b3c;
+}
+
+.addCourseContainer {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 10px teal; 
+    background: whitesmoke;
+}
+
+.form-group > label {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logInContainer {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 15px teal; 
+    background: whitesmoke;
+    margin-top: 125px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#createCourseBtn {
+    margin-bottom: 20px;
+}
+
+#CA {
+    font-size: 15px;
+}
+
+#copyright {
+    font-size: 13px;
+}
+
+.registerForm {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 10px teal;
+    background: whitesmoke;
+}
+
+#registerForm > .form-group {
+    margin-bottom: 20px;
+}
+
+#registerForm > label {
+    display: inline;
+}
+
+#adminBtn > div > a {
+    width: 90px
+}
+
+#addCourse {
+    width: 200px;
+}
+
+#landingPage {
+    margin-bottom: 50px;
+}
+
+#viewCourseName > h3 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#listOfStudent {
+    font-size: 20px;
+    text-align: center;
+}
+
+#listOfEnrolledStudents > thead > tr > th {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#listOfEnrolledStudents {
+    margin-top: 40px;
+}
+
+/* Base class */
+
+
+/* Page class */
+
+#editCourseContainer {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 10px teal; 
+    background: whitesmoke;
+    padding-bottom: 30px;
+}
+
+/* Profile Page */
+#profileTable > thead > tr > th {
+    font-size: 20px;
+}

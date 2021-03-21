@@ -37,7 +37,7 @@ fetch(url)
         let coursePrice = document.querySelector('#coursePrice')
         courseName.innerHTML = data.name
         courseDesc.innerHTML = data.description
-        coursePrice.innerHTML = data.price
+        coursePrice.innerHTML = data.price.toLocaleString(undefined, { minimumFractionDigits: 2 })
 
 
         document.querySelector('#enrollButton').addEventListener('click', () => {
@@ -66,6 +66,8 @@ fetch(url)
                         //notify user that enrollment failed
                         alert("something went wrong");
                     }
-                })            }
+                    spinner.innerHTML = '';
+                })            
+            }
         })
     })
