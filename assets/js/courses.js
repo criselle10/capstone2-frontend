@@ -53,7 +53,7 @@ fetch(url)
         function displayCardFooter(courseId, status) {
             if (adminUser == "false" || !adminUser) {
 
-                cardFooter = `<a href="./course.html?courseId=${courseId}" class="btn btn-primary">Select course</a>`
+                cardFooter = `<a href="./course.html?courseId=${courseId}" class="btn">Select course</a>`
             } else {
                 let courseStatus = '';
                 let courseMessage = '';

@@ -11,24 +11,42 @@ body {
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background: black;
-    color: #00adb5;
-}
-
-.btn {
-    border-color: #00adb5;
-    color: #00adb5;
-    font-weight: bold;
-}
-
-.btn:hover {
+    background: linear-gradient(white, #00adb5, white);
     color: black;
-    background: #00adb5;
 }
 
 nav {
     background: black ;
     font-size: 18px;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+header {
+    margin: 50px;
+}
+
+footer {
+    margin-top: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #252926;
+    color: whitesmoke;
+    background: black;
+}
+
+.btn {
+    color: white;
+    font-weight: bold;
+    border: 1px solid #20639b;
+    border-radius: 20px;
+    background: #0d98ba;
+}
+
+.btn:hover {
+    color: black;
 }
 
 .code {
@@ -49,15 +67,7 @@ nav {
     text-align: center;
 }
 
-header {
-    margin: 50px;
-}
-
 .header {
-    font-weight: bold;
-}
-
-h1, h2 {
     font-weight: bold;
 }
 
@@ -69,20 +79,24 @@ h1, h2 {
 
 .signUpHere {
     text-decoration: none;
-    color: #00adb5;
+    color:black;
+    margin-left: 20px;
 }
 
 .signUpHere:hover {
     color: white;
 }
 
-footer {
-    margin-top: auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    background-color: #252926;
-    color: black;
-    background: #00adb5;
+.form-group {
+    margin: 20px;
+}
+
+.card {
+    border: 1px solid grey;
+}
+
+.card-footer {
+    background: #3a3b3c;
 }
 
 #CA {
@@ -91,4 +105,14 @@ footer {
 
 #copyright {
     font-size: 13px;
+}
+
+#registerForm {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 10px teal;
+}
+
+#loginButton {
+    margin-left: 20px;
 }
