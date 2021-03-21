@@ -11,7 +11,6 @@ if (!token || token === null) {
 	        <a href="./pages/register.html" class="nav-link">Register</a>
 	    </li>
 	`
-
 } else {
     buttonsQuery = `
 		<li class="nav-item">

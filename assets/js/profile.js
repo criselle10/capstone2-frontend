@@ -19,10 +19,10 @@ if (!token || token === null) {
         .then(data => {
             console.log(data.enrollments)
             userContainer.innerHTML = `
-                <h3>First Name: ${data.firstName}</h3>
-                <h3>Last Name: ${data.lastName}</h3>
-                <h3>Email: ${data.email}</h3>
-                <h3 class="ct-3">Class History</h3>
+                <h3><strong>First Name:</strong> ${data.firstName}</h3>
+                <h3><strong>Last Name:</strong> ${data.lastName}</h3>
+                <h3><strong>Email:</strong> ${data.email}</h3>
+                <h4 class="text-center my-5"><strong>Class History</strong></h4>
             `
             if (data.enrollments.length == 0) {
                 const row = document.createElement('tr');

@@ -25,7 +25,7 @@ h1, h2 {
 }
 
 header {
-    margin: 50px;
+    margin-top: 50px;
 }
 
 footer {
@@ -37,11 +37,37 @@ footer {
     background: black;
 }
 
+.form-check > label {
+    color: white;
+    width: 80px;
+    font-size: 1rem;
+}
+
+div > #overview {
+    font-size: 18px;
+}
+
+h4,
+#courseName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+section {
+    border: 2px solid whitesmoke;
+    padding: 20px;
+    box-shadow: 15px 15px rgb(136, 173, 175);
+    background: white;
+    border-radius: 20px;
+}
+
+
 .btn {
     color: white;
     font-weight: bold;
     border: 1px solid #20639b;
-    border-radius: 20px;
+    border-radius: 12px;
     background: #0d98ba;
 }
 
@@ -80,15 +106,10 @@ footer {
 .signUpHere {
     text-decoration: none;
     color:black;
-    margin-left: 20px;
 }
 
 .signUpHere:hover {
-    color: white;
-}
-
-.form-group {
-    margin: 20px;
+    color: grey;
 }
 
 .card {
@@ -99,6 +120,33 @@ footer {
     background: #3a3b3c;
 }
 
+.addCourseContainer {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 10px teal; 
+    background: whitesmoke;
+}
+
+.form-group > label {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logInContainer {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 15px teal; 
+    background: whitesmoke;
+    margin-top: 125px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#createCourseBtn {
+    margin-bottom: 20px;
+}
+
 #CA {
     font-size: 15px;
 }
@@ -107,12 +155,66 @@ footer {
     font-size: 13px;
 }
 
-#registerForm {
+.registerForm {
     border: 2px solid grey;
     border-radius: 30px;
     box-shadow: 30px 10px teal;
+    background: whitesmoke;
 }
 
-#loginButton {
-    margin-left: 20px;
+#registerForm > .form-group {
+    margin-bottom: 20px;
+}
+
+#registerForm > label {
+    display: inline;
+}
+
+#adminBtn > div > a {
+    width: 90px
+}
+
+#addCourse {
+    width: 200px;
+}
+
+#landingPage {
+    margin-bottom: 50px;
+}
+
+#viewCourseName > h3 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#listOfStudent {
+    font-size: 20px;
+    text-align: center;
+}
+
+#listOfEnrolledStudents > thead > tr > th {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#listOfEnrolledStudents {
+    margin-top: 40px;
+}
+
+/* Base class */
+
+
+/* Page class */
+
+#editCourseContainer {
+    border: 2px solid grey;
+    border-radius: 30px;
+    box-shadow: 30px 10px teal; 
+    background: whitesmoke;
+    padding-bottom: 30px;
+}
+
+/* Profile Page */
+#profileTable > thead > tr > th {
+    font-size: 20px;
 }

@@ -5,6 +5,7 @@ let cardFooter;
 let url = '';
 let loggedInButton = '';
 let forLoggedInUserAdmin = document.querySelector('#forLoggedInUserAdmin');
+
 if (!token || token == null) {
     loggedInButton = `
         <li>
@@ -33,8 +34,10 @@ if (adminUser == "false" || !adminUser) {
 } else {
     url = 'https://ca-coursebooking.herokuapp.com/api/courses/view'
     adminButton.innerHTML = `
-    <div class="col-md-2">
-        <a href="./addCourse.html" class="btn">Add Course</a>
+    <div id="addCourse" class="col-md-2">
+        <a href="./addCourse.html" class="btn">
+            <i class="fa fa-plus-square"></i> Add Course
+        </a>
     </div>
 `
 }
@@ -65,15 +68,15 @@ fetch(url)
                     courseMessage = 'Inactive'
                 }
                 cardFooter = `
-                <div class="d-flex justify-content-between align-items-center">
+                <div id="adminBtn" class="d-flex justify-content-between align-items-center">
                     <div>
                         <a 
-                            href="./editCourse.html?courseId=${courseId}" class="btn">
-                            Edit
+                            href="./viewEnrolledUser.html?courseId=${courseId}" class="btn">
+                            <i class="fa fa-eye"></i> View
                         </a>
                         <a 
-                            href="./viewEnrolledUser.html?courseId=${courseId}" class="btn">
-                            View
+                            href="./editCourse.html?courseId=${courseId}" class="btn">
+                            <i class="fa fa-edit"></i> Edit
                         </a>
                     </div>
                     <div class="form-check form-switch">
@@ -94,9 +97,10 @@ fetch(url)
                 <div class="col-md-6 my-3">
                     <div class="card">
                        <div class="card-body">
-                            <h5 class="card-title">${elem.name}</h5>
-                            <p class="card-text text-right">&#8369; ${elem.price}</p>
+                            <h4 class="card-title">${elem.name}</h4>
+                            <p id="overview"> <strong>Overview:</strong> </p>
                             <p class="card-text">${elem.description}</p>
+                            <p class="card-text text-right"><strong>Price: &#8369;${elem.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}</strong></p>
                        </div>
                        <div class="card-footer">
                             ${displayCardFooter(elem._id, elem.isActive)}

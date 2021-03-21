@@ -1,7 +1,7 @@
 let token = localStorage.getItem("token");
 let params = new URLSearchParams(window.location.search);
 let courseId = params.get('courseId');
-let courseName = document.querySelector('#courseName');
+let courseName = document.querySelector('#viewCourseName');
 let listOfEnrolledStudents = document.querySelector('#listOfEnrolledStudents');
 let enrolledStud = document.querySelector('#enrolledStud');
 

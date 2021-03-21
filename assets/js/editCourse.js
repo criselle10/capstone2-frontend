@@ -9,9 +9,9 @@ fetch(url)
     .then(data => {
         // console.log(data)
         // display data in html
-        let courseName = document.querySelector('#courseName')
-        let courseDesc = document.querySelector('#courseDescription')
-        let coursePrice = document.querySelector('#coursePrice')
+        let courseName = document.querySelector('#editCourseName')
+        let courseDesc = document.querySelector('#editCourseDescription')
+        let coursePrice = document.querySelector('#editCoursePrice')
         courseName.value = data.name
         courseDesc.value = data.description
         coursePrice.value = data.price
@@ -23,9 +23,9 @@ let editCourse = document.querySelector('#editCourse')
 editCourse.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    let name = document.querySelector('#courseName').value;
-    let price = document.querySelector('#coursePrice').value;
-    let description = document.querySelector('#courseDescription').value;
+    let name = document.querySelector('#editCourseName').value;
+    let price = document.querySelector('#editCoursePrice').value;
+    let description = document.querySelector('#editCourseDescription').value;
 
     let body = {
         _id: courseId,
