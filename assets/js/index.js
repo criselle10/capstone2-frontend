@@ -5,7 +5,7 @@ let authorizedButton = document.querySelector('#authorizedButton');
 if (!token || token === null) {
     buttonsQuery = `
 		<li class="nav -item">
-	        <a href="./pages/login.html" class="nav-link">Log In</a>
+	        <a href="./pages/login.html" class="nav-link">Sign In</a>
 	    </li>
 	    <li class="nav-item">
 	        <a href="./pages/register.html" class="nav-link">Register</a>
